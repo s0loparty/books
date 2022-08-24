@@ -55,3 +55,9 @@ import { store } from '../store'
 
 const { fetchBooks } = useApi()
 </script>
+
+<style scoped>
+	header {
+		background: linear-gradient(to right,#fd30db,#6c49f9) !important;
+	}
+</style>
