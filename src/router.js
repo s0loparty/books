@@ -4,6 +4,7 @@ import {
 } from "vue-router"
 const routes = [{
 		path: '/',
+		name: 'main',
 		component: () => import('./views/Main.vue')
 	},
 	{

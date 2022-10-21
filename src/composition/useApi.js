@@ -1,4 +1,5 @@
 import { store } from "../store"
+import router from '../router'
 
 const { VITE_API_URL } = import.meta.env
 
@@ -30,6 +31,12 @@ export default function useFetch() {
 	const fetchBooks = async () => {
 		if (store.queryParams.q.length < 2) {
 			return alert('Название книги должно быть больше чем 2 буквы')
+		}
+
+		// если не с главной странице
+		// делаем редирект на главную
+		if (router.currentRoute.value?.name !== 'main') {
+			router.push({ name: 'main' })
 		}
 
 		store.isLoading = true
